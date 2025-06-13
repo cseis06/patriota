@@ -1,0 +1,20 @@
+header {
+    padding: 2dvh 7%;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    height: 8dvh;
+    width: auto;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    color: var(--font-p1);
+    font-weight: 400;
+}
