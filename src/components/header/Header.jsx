@@ -1,29 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css'
 
 const Header = () => {
-  return (
+
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
+    const toggleNav = () => {
+        setIsNavOpen(!isNavOpen);
+    };
+    return (
     <header>
         <div className='header-content'>
             <div className='logo'>
                 <img src="./img/logo.svg" alt="logo" />
             </div>
-            <nav>
+            <nav className={`nav ${isNavOpen ? 'open' : ''}`}>
                 <ul className='nav-links'>
                     <li>
-                        <a href="#">Inicio</a>
+                        <Link to="/">Inicio</Link>
                     </li>
                     <li>
-                        <a href="#">Catálogo</a>
+                        <Link to="/">Catálogo</Link>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <Link to="/">Contacto</Link>
                     </li>
                 </ul>
             </nav>
+            <button className='hamburger' onClick={toggleNav}>
+                <img src="./img/icon/hamburguer.svg" alt="menu" />
+            </button>
         </div>
     </header>
-  )
+   )
 }
 
 export default Header
